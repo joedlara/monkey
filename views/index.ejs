@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monkey Dashboard</title>
+</head>
+<body>
+	<h1>Welcome to the Monkey Dashboard</h1>
+
+	<table>
+	 	<tr>
+	 		<th>Name</th>
+	 		<th>Color</th>
+	 		<th>Age</th>
+	 		<th>Action</th>
+	 	</tr>
+	 	<% for(var i in monkeys){%>
+	 		<tr>
+	 			<td><a href="/monkeys/<%= monkeys[i]._id %>"><%= monkeys[i].name %></a></td>
+	 			<td><%= monkeys[i].color %></td>
+	 			<td><%= monkeys[i].age %></td>
+	 			<td><a href="/monkeys/<%= monkeys[i]._id %>/edit">Edit</a> | 
+	 				<form action="monkeys/destroy/<%= monkeys[i]._id %>" method="POST">
+	 					<input type="submit" value="Delete">
+	 				</form>
+	 			</td>
+	 		</tr>
+	 	<%}%>
+	</table>
+
+
+	<a href="/monkeys/new">Create a New Monkey</a>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monkey Dashboard</title>
+</head>
+<body>
+	<a href="/">Home</a>
+	<h1>Edit a New Monkey</h1>
+	<form action="/monkeys/<%= monkey.id %>" method="POST">
+		<label>Name: <input type="text" name="name" value="<%= monkey.name %>"></label>
+		<label>Color: <input type="text" name="color" value="<%= monkey.color %>"></label>
+		<label>Age: <input type="text" name="age" value="<%= monkey.age %>"></label>
+		<input type="submit" value="Update Monkey">
+	</form>
+
+</body>
+</html>
